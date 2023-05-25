@@ -206,7 +206,7 @@ extension on Abi {
         return 'libisar.dylib';
       case Abi.linuxArm64:
       case Abi.linuxX64:
-        return 'libisar.so';
+        return '${File(Platform.resolvedExecutable).parent.path}/lib/libisar.so';
       case Abi.windowsArm64:
       case Abi.windowsX64:
         return 'isar.dll';
