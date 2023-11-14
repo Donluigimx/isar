@@ -8,6 +8,7 @@ import 'dart:isolate';
 import 'package:ffi/ffi.dart';
 import 'package:isar/isar.dart';
 import 'package:isar/src/native/bindings.dart';
+import 'package:path/path.dart' as p;
 
 const Id isarMinId = -9223372036854775807;
 
@@ -204,9 +205,13 @@ extension on Abi {
       case Abi.macosArm64:
       case Abi.macosX64:
         return 'libisar.dylib';
-      case Abi.linuxArm64:
       case Abi.linuxX64:
-        return '${File(Platform.resolvedExecutable).parent.path}/lib/libisar.so';
+        return 'libisar.so';
+      case Abi.linuxArm64:
+        return p.join(
+          File(Platform.resolvedExecutable).parent.path,
+          '/lib/libisar.so',
+        );
       case Abi.windowsArm64:
       case Abi.windowsX64:
         return 'isar.dll';
