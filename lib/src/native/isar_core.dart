@@ -208,10 +208,7 @@ extension on Abi {
       case Abi.linuxX64:
         return 'libisar.so';
       case Abi.linuxArm64:
-        return p.join(
-          File(Platform.resolvedExecutable).parent.path,
-          '/lib/libisar.so',
-        );
+          return '/lib/libisar.so';
       case Abi.windowsArm64:
       case Abi.windowsX64:
         return 'isar.dll';
