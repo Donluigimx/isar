@@ -127,7 +127,8 @@ String _getLibraryDownloadPath(Map<Abi, String> libraries) {
       // Not on windows, add leading platform path separator
       dir = '${Platform.pathSeparator}$dir';
     }
-    return '$dir${Platform.pathSeparator}$name';
+
+    return p.join(dir, name);
   }
 }
 
