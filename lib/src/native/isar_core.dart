@@ -210,7 +210,7 @@ extension on Abi {
       case Abi.linuxArm64:
         return p.join(
           File(Platform.resolvedExecutable).parent.path,
-          '/lib/libisar.so',
+          'lib/libisar.so',
         );
       case Abi.windowsArm64:
       case Abi.windowsX64:
